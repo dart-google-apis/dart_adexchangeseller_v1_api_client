@@ -3,22 +3,22 @@ part of adexchangeseller_v1_api_client;
 class AdClient {
 
   /** Whether this ad client is opted in to ARC. */
-  bool arcOptIn;
+  core.bool arcOptIn;
 
   /** Unique identifier of this ad client. */
-  String id;
+  core.String id;
 
   /** Kind of resource this is, in this case adexchangeseller#adClient. */
-  String kind;
+  core.String kind;
 
   /** This ad client's product code, which corresponds to the PRODUCT_CODE report dimension. */
-  String productCode;
+  core.String productCode;
 
   /** Whether this ad client supports being reported on. */
-  bool supportsReporting;
+  core.bool supportsReporting;
 
   /** Create new AdClient from JSON data */
-  AdClient.fromJson(Map json) {
+  AdClient.fromJson(core.Map json) {
     if (json.containsKey("arcOptIn")) {
       arcOptIn = json["arcOptIn"];
     }
@@ -37,8 +37,8 @@ class AdClient {
   }
 
   /** Create JSON Object for AdClient */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (arcOptIn != null) {
       output["arcOptIn"] = arcOptIn;
@@ -60,26 +60,26 @@ class AdClient {
   }
 
   /** Return String representation of AdClient */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class AdClients {
 
   /** ETag of this response for caching purposes. */
-  String etag;
+  core.String etag;
 
   /** The ad clients returned in this list response. */
-  List<AdClient> items;
+  core.List<AdClient> items;
 
   /** Kind of list this is, in this case adexchangeseller#adClients. */
-  String kind;
+  core.String kind;
 
   /** Continuation token used to page through ad clients. To retrieve the next page of results, set the next request's "pageToken" value to this. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Create new AdClients from JSON data */
-  AdClients.fromJson(Map json) {
+  AdClients.fromJson(core.Map json) {
     if (json.containsKey("etag")) {
       etag = json["etag"];
     }
@@ -98,14 +98,14 @@ class AdClients {
   }
 
   /** Create JSON Object for AdClients */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (etag != null) {
       output["etag"] = etag;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -121,23 +121,23 @@ class AdClients {
   }
 
   /** Return String representation of AdClients */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class AdUnit {
 
   /** Identity code of this ad unit, not necessarily unique across ad clients. */
-  String code;
+  core.String code;
 
   /** Unique identifier of this ad unit. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. */
-  String id;
+  core.String id;
 
   /** Kind of resource this is, in this case adexchangeseller#adUnit. */
-  String kind;
+  core.String kind;
 
   /** Name of this ad unit. */
-  String name;
+  core.String name;
 
   /** Status of this ad unit. Possible values are:
 NEW: Indicates that the ad unit was created within the last seven days and does not yet have any activity associated with it.
@@ -145,10 +145,10 @@ NEW: Indicates that the ad unit was created within the last seven days and does 
 ACTIVE: Indicates that there has been activity on this ad unit in the last seven days.
 
 INACTIVE: Indicates that there has been no activity on this ad unit in the last seven days. */
-  String status;
+  core.String status;
 
   /** Create new AdUnit from JSON data */
-  AdUnit.fromJson(Map json) {
+  AdUnit.fromJson(core.Map json) {
     if (json.containsKey("code")) {
       code = json["code"];
     }
@@ -167,8 +167,8 @@ INACTIVE: Indicates that there has been no activity on this ad unit in the last 
   }
 
   /** Create JSON Object for AdUnit */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (code != null) {
       output["code"] = code;
@@ -190,26 +190,26 @@ INACTIVE: Indicates that there has been no activity on this ad unit in the last 
   }
 
   /** Return String representation of AdUnit */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class AdUnits {
 
   /** ETag of this response for caching purposes. */
-  String etag;
+  core.String etag;
 
   /** The ad units returned in this list response. */
-  List<AdUnit> items;
+  core.List<AdUnit> items;
 
   /** Kind of list this is, in this case adexchangeseller#adUnits. */
-  String kind;
+  core.String kind;
 
   /** Continuation token used to page through ad units. To retrieve the next page of results, set the next request's "pageToken" value to this. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Create new AdUnits from JSON data */
-  AdUnits.fromJson(Map json) {
+  AdUnits.fromJson(core.Map json) {
     if (json.containsKey("etag")) {
       etag = json["etag"];
     }
@@ -228,14 +228,14 @@ class AdUnits {
   }
 
   /** Create JSON Object for AdUnits */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (etag != null) {
       output["etag"] = etag;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -251,29 +251,29 @@ class AdUnits {
   }
 
   /** Return String representation of AdUnits */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class CustomChannel {
 
   /** Code of this custom channel, not necessarily unique across ad clients. */
-  String code;
+  core.String code;
 
   /** Unique identifier of this custom channel. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. */
-  String id;
+  core.String id;
 
   /** Kind of resource this is, in this case adexchangeseller#customChannel. */
-  String kind;
+  core.String kind;
 
   /** Name of this custom channel. */
-  String name;
+  core.String name;
 
   /** The targeting information of this custom channel, if activated. */
   CustomChannelTargetingInfo targetingInfo;
 
   /** Create new CustomChannel from JSON data */
-  CustomChannel.fromJson(Map json) {
+  CustomChannel.fromJson(core.Map json) {
     if (json.containsKey("code")) {
       code = json["code"];
     }
@@ -292,8 +292,8 @@ class CustomChannel {
   }
 
   /** Create JSON Object for CustomChannel */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (code != null) {
       output["code"] = code;
@@ -315,7 +315,7 @@ class CustomChannel {
   }
 
   /** Return String representation of CustomChannel */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -323,19 +323,19 @@ class CustomChannel {
 class CustomChannelTargetingInfo {
 
   /** The name used to describe this channel externally. */
-  String adsAppearOn;
+  core.String adsAppearOn;
 
   /** The external description of the channel. */
-  String description;
+  core.String description;
 
   /** The locations in which ads appear. (Only valid for content and mobile content ads). Acceptable values for content ads are: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT, MULTIPLE_LOCATIONS. Acceptable values for mobile content ads are: TOP, MIDDLE, BOTTOM, MULTIPLE_LOCATIONS. */
-  String location;
+  core.String location;
 
   /** The language of the sites ads will be displayed on. */
-  String siteLanguage;
+  core.String siteLanguage;
 
   /** Create new CustomChannelTargetingInfo from JSON data */
-  CustomChannelTargetingInfo.fromJson(Map json) {
+  CustomChannelTargetingInfo.fromJson(core.Map json) {
     if (json.containsKey("adsAppearOn")) {
       adsAppearOn = json["adsAppearOn"];
     }
@@ -351,8 +351,8 @@ class CustomChannelTargetingInfo {
   }
 
   /** Create JSON Object for CustomChannelTargetingInfo */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (adsAppearOn != null) {
       output["adsAppearOn"] = adsAppearOn;
@@ -371,26 +371,26 @@ class CustomChannelTargetingInfo {
   }
 
   /** Return String representation of CustomChannelTargetingInfo */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class CustomChannels {
 
   /** ETag of this response for caching purposes. */
-  String etag;
+  core.String etag;
 
   /** The custom channels returned in this list response. */
-  List<CustomChannel> items;
+  core.List<CustomChannel> items;
 
   /** Kind of list this is, in this case adexchangeseller#customChannels. */
-  String kind;
+  core.String kind;
 
   /** Continuation token used to page through custom channels. To retrieve the next page of results, set the next request's "pageToken" value to this. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Create new CustomChannels from JSON data */
-  CustomChannels.fromJson(Map json) {
+  CustomChannels.fromJson(core.Map json) {
     if (json.containsKey("etag")) {
       etag = json["etag"];
     }
@@ -409,14 +409,14 @@ class CustomChannels {
   }
 
   /** Create JSON Object for CustomChannels */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (etag != null) {
       output["etag"] = etag;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -432,32 +432,32 @@ class CustomChannels {
   }
 
   /** Return String representation of CustomChannels */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class Report {
 
   /** The averages of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty. */
-  List<String> averages;
+  core.List<core.String> averages;
 
   /** The header information of the columns requested in the report. This is a list of headers; one for each dimension in the request, followed by one for each metric in the request. */
-  List<ReportHeaders> headers;
+  core.List<ReportHeaders> headers;
 
   /** Kind this is, in this case adexchangeseller#report. */
-  String kind;
+  core.String kind;
 
   /** The total number of rows matched by the report request. Fewer rows may be returned in the response due to being limited by the row count requested or the report row limit. */
-  String totalMatchedRows;
+  core.String totalMatchedRows;
 
   /** The totals of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty. */
-  List<String> totals;
+  core.List<core.String> totals;
 
   /** Any warnings associated with generation of the report. */
-  List<String> warnings;
+  core.List<core.String> warnings;
 
   /** Create new Report from JSON data */
-  Report.fromJson(Map json) {
+  Report.fromJson(core.Map json) {
     if (json.containsKey("averages")) {
       averages = [];
       json["averages"].forEach((item) {
@@ -491,17 +491,17 @@ class Report {
   }
 
   /** Create JSON Object for Report */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (averages != null) {
-      output["averages"] = new List();
+      output["averages"] = new core.List();
       averages.forEach((item) {
         output["averages"].add(item);
       });
     }
     if (headers != null) {
-      output["headers"] = new List();
+      output["headers"] = new core.List();
       headers.forEach((item) {
         output["headers"].add(item.toJson());
       });
@@ -513,13 +513,13 @@ class Report {
       output["totalMatchedRows"] = totalMatchedRows;
     }
     if (totals != null) {
-      output["totals"] = new List();
+      output["totals"] = new core.List();
       totals.forEach((item) {
         output["totals"].add(item);
       });
     }
     if (warnings != null) {
-      output["warnings"] = new List();
+      output["warnings"] = new core.List();
       warnings.forEach((item) {
         output["warnings"].add(item);
       });
@@ -529,23 +529,23 @@ class Report {
   }
 
   /** Return String representation of Report */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ReportHeaders {
 
   /** The currency of this column. Only present if the header type is METRIC_CURRENCY. */
-  String currency;
+  core.String currency;
 
   /** The name of the header. */
-  String name;
+  core.String name;
 
   /** The type of the header; one of DIMENSION, METRIC_TALLY, METRIC_RATIO, or METRIC_CURRENCY. */
-  String type;
+  core.String type;
 
   /** Create new ReportHeaders from JSON data */
-  ReportHeaders.fromJson(Map json) {
+  ReportHeaders.fromJson(core.Map json) {
     if (json.containsKey("currency")) {
       currency = json["currency"];
     }
@@ -558,8 +558,8 @@ class ReportHeaders {
   }
 
   /** Create JSON Object for ReportHeaders */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (currency != null) {
       output["currency"] = currency;
@@ -575,23 +575,23 @@ class ReportHeaders {
   }
 
   /** Return String representation of ReportHeaders */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class SavedReport {
 
   /** Unique identifier of this saved report. */
-  String id;
+  core.String id;
 
   /** Kind of resource this is, in this case adexchangeseller#savedReport. */
-  String kind;
+  core.String kind;
 
   /** This saved report's name. */
-  String name;
+  core.String name;
 
   /** Create new SavedReport from JSON data */
-  SavedReport.fromJson(Map json) {
+  SavedReport.fromJson(core.Map json) {
     if (json.containsKey("id")) {
       id = json["id"];
     }
@@ -604,8 +604,8 @@ class SavedReport {
   }
 
   /** Create JSON Object for SavedReport */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (id != null) {
       output["id"] = id;
@@ -621,26 +621,26 @@ class SavedReport {
   }
 
   /** Return String representation of SavedReport */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class SavedReports {
 
   /** ETag of this response for caching purposes. */
-  String etag;
+  core.String etag;
 
   /** The saved reports returned in this list response. */
-  List<SavedReport> items;
+  core.List<SavedReport> items;
 
   /** Kind of list this is, in this case adexchangeseller#savedReports. */
-  String kind;
+  core.String kind;
 
   /** Continuation token used to page through saved reports. To retrieve the next page of results, set the next request's "pageToken" value to this. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Create new SavedReports from JSON data */
-  SavedReports.fromJson(Map json) {
+  SavedReports.fromJson(core.Map json) {
     if (json.containsKey("etag")) {
       etag = json["etag"];
     }
@@ -659,14 +659,14 @@ class SavedReports {
   }
 
   /** Create JSON Object for SavedReports */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (etag != null) {
       output["etag"] = etag;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -682,23 +682,23 @@ class SavedReports {
   }
 
   /** Return String representation of SavedReports */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class UrlChannel {
 
   /** Unique identifier of this URL channel. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. */
-  String id;
+  core.String id;
 
   /** Kind of resource this is, in this case adexchangeseller#urlChannel. */
-  String kind;
+  core.String kind;
 
   /** URL Pattern of this URL channel. Does not include "http://" or "https://". Example: www.example.com/home */
-  String urlPattern;
+  core.String urlPattern;
 
   /** Create new UrlChannel from JSON data */
-  UrlChannel.fromJson(Map json) {
+  UrlChannel.fromJson(core.Map json) {
     if (json.containsKey("id")) {
       id = json["id"];
     }
@@ -711,8 +711,8 @@ class UrlChannel {
   }
 
   /** Create JSON Object for UrlChannel */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (id != null) {
       output["id"] = id;
@@ -728,26 +728,26 @@ class UrlChannel {
   }
 
   /** Return String representation of UrlChannel */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class UrlChannels {
 
   /** ETag of this response for caching purposes. */
-  String etag;
+  core.String etag;
 
   /** The URL channels returned in this list response. */
-  List<UrlChannel> items;
+  core.List<UrlChannel> items;
 
   /** Kind of list this is, in this case adexchangeseller#urlChannels. */
-  String kind;
+  core.String kind;
 
   /** Continuation token used to page through URL channels. To retrieve the next page of results, set the next request's "pageToken" value to this. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Create new UrlChannels from JSON data */
-  UrlChannels.fromJson(Map json) {
+  UrlChannels.fromJson(core.Map json) {
     if (json.containsKey("etag")) {
       etag = json["etag"];
     }
@@ -766,14 +766,14 @@ class UrlChannels {
   }
 
   /** Create JSON Object for UrlChannels */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (etag != null) {
       output["etag"] = etag;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -789,7 +789,7 @@ class UrlChannels {
   }
 
   /** Return String representation of UrlChannels */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
