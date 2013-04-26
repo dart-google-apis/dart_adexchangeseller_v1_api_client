@@ -8,7 +8,7 @@ Auto-generated client library for accessing the adexchangeseller v1 API.
 
 Gives Ad Exchange seller users access to their inventory and the ability to generate reports
 
-Official API documentation: https://developers.google.com/adsense/management/
+Official API documentation: https://developers.google.com/ad-exchange/seller-rest/
 
 For web applications:
 ```

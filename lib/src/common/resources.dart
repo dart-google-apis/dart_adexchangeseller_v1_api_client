@@ -1,8 +1,8 @@
 part of adexchangeseller_v1_api_client;
 
-class AdclientsResource extends Resource {
+class AdclientsResource_ extends Resource {
 
-  AdclientsResource(Client client) : super(client) {
+  AdclientsResource_(Client client) : super(client) {
   }
 
   /**
@@ -34,7 +34,7 @@ class AdclientsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -47,13 +47,13 @@ class AdclientsResource extends Resource {
   }
 }
 
-class AdunitsResource extends Resource {
+class AdunitsResource_ extends Resource {
 
-  AdunitsCustomchannelsResource _customchannels;
-  AdunitsCustomchannelsResource get customchannels => _customchannels;
+  AdunitsCustomchannelsResource_ _customchannels;
+  AdunitsCustomchannelsResource_ get customchannels => _customchannels;
 
-  AdunitsResource(Client client) : super(client) {
-  _customchannels = new AdunitsCustomchannelsResource(client);
+  AdunitsResource_(Client client) : super(client) {
+  _customchannels = new AdunitsCustomchannelsResource_(client);
   }
 
   /**
@@ -85,7 +85,7 @@ class AdunitsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -133,7 +133,7 @@ class AdunitsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -146,9 +146,9 @@ class AdunitsResource extends Resource {
   }
 }
 
-class AdunitsCustomchannelsResource extends Resource {
+class AdunitsCustomchannelsResource_ extends Resource {
 
-  AdunitsCustomchannelsResource(Client client) : super(client) {
+  AdunitsCustomchannelsResource_(Client client) : super(client) {
   }
 
   /**
@@ -188,7 +188,7 @@ class AdunitsCustomchannelsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -201,13 +201,13 @@ class AdunitsCustomchannelsResource extends Resource {
   }
 }
 
-class CustomchannelsResource extends Resource {
+class CustomchannelsResource_ extends Resource {
 
-  CustomchannelsAdunitsResource _adunits;
-  CustomchannelsAdunitsResource get adunits => _adunits;
+  CustomchannelsAdunitsResource_ _adunits;
+  CustomchannelsAdunitsResource_ get adunits => _adunits;
 
-  CustomchannelsResource(Client client) : super(client) {
-  _adunits = new CustomchannelsAdunitsResource(client);
+  CustomchannelsResource_(Client client) : super(client) {
+  _adunits = new CustomchannelsAdunitsResource_(client);
   }
 
   /**
@@ -239,7 +239,7 @@ class CustomchannelsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -284,7 +284,7 @@ class CustomchannelsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -297,9 +297,9 @@ class CustomchannelsResource extends Resource {
   }
 }
 
-class CustomchannelsAdunitsResource extends Resource {
+class CustomchannelsAdunitsResource_ extends Resource {
 
-  CustomchannelsAdunitsResource(Client client) : super(client) {
+  CustomchannelsAdunitsResource_(Client client) : super(client) {
   }
 
   /**
@@ -342,7 +342,7 @@ class CustomchannelsAdunitsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -355,13 +355,13 @@ class CustomchannelsAdunitsResource extends Resource {
   }
 }
 
-class ReportsResource extends Resource {
+class ReportsResource_ extends Resource {
 
-  ReportsSavedResource _saved;
-  ReportsSavedResource get saved => _saved;
+  ReportsSavedResource_ _saved;
+  ReportsSavedResource_ get saved => _saved;
 
-  ReportsResource(Client client) : super(client) {
-  _saved = new ReportsSavedResource(client);
+  ReportsResource_(Client client) : super(client) {
+  _saved = new ReportsSavedResource_(client);
   }
 
   /**
@@ -418,7 +418,7 @@ class ReportsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -431,9 +431,9 @@ class ReportsResource extends Resource {
   }
 }
 
-class ReportsSavedResource extends Resource {
+class ReportsSavedResource_ extends Resource {
 
-  ReportsSavedResource(Client client) : super(client) {
+  ReportsSavedResource_(Client client) : super(client) {
   }
 
   /**
@@ -474,7 +474,7 @@ class ReportsSavedResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -515,7 +515,7 @@ class ReportsSavedResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -528,9 +528,9 @@ class ReportsSavedResource extends Resource {
   }
 }
 
-class UrlchannelsResource extends Resource {
+class UrlchannelsResource_ extends Resource {
 
-  UrlchannelsResource(Client client) : super(client) {
+  UrlchannelsResource_(Client client) : super(client) {
   }
 
   /**
@@ -566,7 +566,7 @@ class UrlchannelsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
