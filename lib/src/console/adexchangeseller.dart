@@ -72,7 +72,7 @@ class Adexchangeseller extends ConsoleClient {
 
   Adexchangeseller([oauth2.OAuth2Console auth]) : super(auth) {
     basePath = "/adexchangeseller/v1/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _adclients = new AdclientsResource_(this);
     _adunits = new AdunitsResource_(this);
     _customchannels = new CustomchannelsResource_(this);
