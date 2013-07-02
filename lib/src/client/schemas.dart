@@ -474,7 +474,11 @@ class Report {
       kind = json["kind"];
     }
     if (json.containsKey("totalMatchedRows")) {
-      totalMatchedRows = json["totalMatchedRows"];
+      if(json["totalMatchedRows"] is core.String){
+        totalMatchedRows = core.int.parse(json["totalMatchedRows"]);
+      }else{
+        totalMatchedRows = json["totalMatchedRows"];
+      }
     }
     if (json.containsKey("totals")) {
       totals = [];
