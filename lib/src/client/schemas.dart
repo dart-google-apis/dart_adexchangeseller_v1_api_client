@@ -1,4 +1,4 @@
-part of adexchangeseller_v1_api_client;
+part of adexchangeseller_v1_api;
 
 class AdClient {
 
@@ -84,10 +84,7 @@ class AdClients {
       etag = json["etag"];
     }
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new AdClient.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new AdClient.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -105,10 +102,7 @@ class AdClients {
       output["etag"] = etag;
     }
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -214,10 +208,7 @@ class AdUnits {
       etag = json["etag"];
     }
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new AdUnit.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new AdUnit.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -235,10 +226,7 @@ class AdUnits {
       output["etag"] = etag;
     }
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -395,10 +383,7 @@ class CustomChannels {
       etag = json["etag"];
     }
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new CustomChannel.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new CustomChannel.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -416,10 +401,7 @@ class CustomChannels {
       output["etag"] = etag;
     }
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -447,6 +429,9 @@ class Report {
   /** Kind this is, in this case adexchangeseller#report. */
   core.String kind;
 
+  /** The output rows of the report. Each row is a list of cells; one for each dimension in the request, followed by one for each metric in the request. The dimension cells contain strings, and the metric cells contain numbers. */
+  core.List<core.List<core.String>> rows;
+
   /** The total number of rows matched by the report request. Fewer rows may be returned in the response due to being limited by the row count requested or the report row limit. */
   core.int totalMatchedRows;
 
@@ -459,38 +444,25 @@ class Report {
   /** Create new Report from JSON data */
   Report.fromJson(core.Map json) {
     if (json.containsKey("averages")) {
-      averages = [];
-      json["averages"].forEach((item) {
-        averages.add(item);
-      });
+      averages = json["averages"].toList();
     }
     if (json.containsKey("headers")) {
-      headers = [];
-      json["headers"].forEach((item) {
-        headers.add(new ReportHeaders.fromJson(item));
-      });
+      headers = json["headers"].map((headersItem) => new ReportHeaders.fromJson(headersItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
     }
+    if (json.containsKey("rows")) {
+      rows = json["rows"].map((rowsItem) => rowsItem.toList()).toList();
+    }
     if (json.containsKey("totalMatchedRows")) {
-      if(json["totalMatchedRows"] is core.String){
-        totalMatchedRows = core.int.parse(json["totalMatchedRows"]);
-      }else{
-        totalMatchedRows = json["totalMatchedRows"];
-      }
+      totalMatchedRows = (json["totalMatchedRows"] is core.String) ? core.int.parse(json["totalMatchedRows"]) : json["totalMatchedRows"];
     }
     if (json.containsKey("totals")) {
-      totals = [];
-      json["totals"].forEach((item) {
-        totals.add(item);
-      });
+      totals = json["totals"].toList();
     }
     if (json.containsKey("warnings")) {
-      warnings = [];
-      json["warnings"].forEach((item) {
-        warnings.add(item);
-      });
+      warnings = json["warnings"].toList();
     }
   }
 
@@ -499,34 +471,25 @@ class Report {
     var output = new core.Map();
 
     if (averages != null) {
-      output["averages"] = new core.List();
-      averages.forEach((item) {
-        output["averages"].add(item);
-      });
+      output["averages"] = averages.toList();
     }
     if (headers != null) {
-      output["headers"] = new core.List();
-      headers.forEach((item) {
-        output["headers"].add(item.toJson());
-      });
+      output["headers"] = headers.map((headersItem) => headersItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
+    }
+    if (rows != null) {
+      output["rows"] = rows.map((rowsItem) => rowsItem.toList()).toList();
     }
     if (totalMatchedRows != null) {
       output["totalMatchedRows"] = totalMatchedRows;
     }
     if (totals != null) {
-      output["totals"] = new core.List();
-      totals.forEach((item) {
-        output["totals"].add(item);
-      });
+      output["totals"] = totals.toList();
     }
     if (warnings != null) {
-      output["warnings"] = new core.List();
-      warnings.forEach((item) {
-        output["warnings"].add(item);
-      });
+      output["warnings"] = warnings.toList();
     }
 
     return output;
@@ -649,10 +612,7 @@ class SavedReports {
       etag = json["etag"];
     }
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new SavedReport.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new SavedReport.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -670,10 +630,7 @@ class SavedReports {
       output["etag"] = etag;
     }
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -756,10 +713,7 @@ class UrlChannels {
       etag = json["etag"];
     }
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new UrlChannel.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new UrlChannel.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -777,10 +731,7 @@ class UrlChannels {
       output["etag"] = etag;
     }
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -797,3 +748,16 @@ class UrlChannels {
 
 }
 
+core.Map _mapMap(core.Map source, [core.Object convert(core.Object source) = null]) {
+  assert(source != null);
+  var result = new dart_collection.LinkedHashMap();
+  source.forEach((core.String key, value) {
+    assert(key != null);
+    if(convert == null) {
+      result[key] = value;
+    } else {
+      result[key] = convert(value);
+    }
+  });
+  return result;
+}

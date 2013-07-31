@@ -1,9 +1,11 @@
-part of adexchangeseller_v1_api_client;
+part of adexchangeseller_v1_api;
 
-class AdclientsResource_ extends Resource {
+class AdclientsResource_ {
 
-  AdclientsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  AdclientsResource_(Client client) :
+      _client = client;
 
   /**
    * List all ad clients in this Ad Exchange account.
@@ -43,14 +45,15 @@ class AdclientsResource_ extends Resource {
   }
 }
 
-class AdunitsResource_ extends Resource {
+class AdunitsResource_ {
 
-  AdunitsCustomchannelsResource_ _customchannels;
-  AdunitsCustomchannelsResource_ get customchannels => _customchannels;
+  final Client _client;
 
-  AdunitsResource_(Client client) : super(client) {
-  _customchannels = new AdunitsCustomchannelsResource_(client);
-  }
+  final AdunitsCustomchannelsResource_ customchannels;
+
+  AdunitsResource_(Client client) :
+      _client = client,
+      customchannels = new AdunitsCustomchannelsResource_(client);
 
   /**
    * Gets the specified ad unit in the specified ad client.
@@ -134,10 +137,12 @@ class AdunitsResource_ extends Resource {
   }
 }
 
-class AdunitsCustomchannelsResource_ extends Resource {
+class AdunitsCustomchannelsResource_ {
 
-  AdunitsCustomchannelsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  AdunitsCustomchannelsResource_(Client client) :
+      _client = client;
 
   /**
    * List all custom channels which the specified ad unit belongs to.
@@ -185,14 +190,15 @@ class AdunitsCustomchannelsResource_ extends Resource {
   }
 }
 
-class CustomchannelsResource_ extends Resource {
+class CustomchannelsResource_ {
 
-  CustomchannelsAdunitsResource_ _adunits;
-  CustomchannelsAdunitsResource_ get adunits => _adunits;
+  final Client _client;
 
-  CustomchannelsResource_(Client client) : super(client) {
-  _adunits = new CustomchannelsAdunitsResource_(client);
-  }
+  final CustomchannelsAdunitsResource_ adunits;
+
+  CustomchannelsResource_(Client client) :
+      _client = client,
+      adunits = new CustomchannelsAdunitsResource_(client);
 
   /**
    * Get the specified custom channel from the specified ad client.
@@ -273,10 +279,12 @@ class CustomchannelsResource_ extends Resource {
   }
 }
 
-class CustomchannelsAdunitsResource_ extends Resource {
+class CustomchannelsAdunitsResource_ {
 
-  CustomchannelsAdunitsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  CustomchannelsAdunitsResource_(Client client) :
+      _client = client;
 
   /**
    * List all ad units in the specified custom channel.
@@ -327,14 +335,15 @@ class CustomchannelsAdunitsResource_ extends Resource {
   }
 }
 
-class ReportsResource_ extends Resource {
+class ReportsResource_ {
 
-  ReportsSavedResource_ _saved;
-  ReportsSavedResource_ get saved => _saved;
+  final Client _client;
 
-  ReportsResource_(Client client) : super(client) {
-  _saved = new ReportsSavedResource_(client);
-  }
+  final ReportsSavedResource_ saved;
+
+  ReportsResource_(Client client) :
+      _client = client,
+      saved = new ReportsSavedResource_(client);
 
   /**
    * Generate an Ad Exchange report based on the report request sent in the query parameters. Returns the result as JSON; to retrieve output in CSV format specify "alt=csv" as a query parameter.
@@ -344,8 +353,10 @@ class ReportsResource_ extends Resource {
    * [endDate] - End of the date range to report on in "YYYY-MM-DD" format, inclusive.
    *
    * [dimension] - Dimensions to base the report on.
+   *   Repeated values: allowed
    *
    * [filter] - Filters to be run on the report.
+   *   Repeated values: allowed
    *
    * [locale] - Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.
    *
@@ -354,8 +365,10 @@ class ReportsResource_ extends Resource {
    *   Maximum: 50000
    *
    * [metric] - Numeric columns to include in the report.
+   *   Repeated values: allowed
    *
    * [sort] - The name of a dimension or metric to sort the resulting report on, optionally prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.
+   *   Repeated values: allowed
    *
    * [startIndex] - Index of the first row of report data to return.
    *   Minimum: 0
@@ -363,7 +376,7 @@ class ReportsResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Report> generate(core.String startDate, core.String endDate, {core.String dimension, core.String filter, core.String locale, core.int maxResults, core.String metric, core.String sort, core.int startIndex, core.Map optParams}) {
+  async.Future<Report> generate(core.String startDate, core.String endDate, {core.List<core.String> dimension, core.List<core.String> filter, core.String locale, core.int maxResults, core.List<core.String> metric, core.List<core.String> sort, core.int startIndex, core.Map optParams}) {
     var url = "reports";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -399,10 +412,12 @@ class ReportsResource_ extends Resource {
   }
 }
 
-class ReportsSavedResource_ extends Resource {
+class ReportsSavedResource_ {
 
-  ReportsSavedResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  ReportsSavedResource_(Client client) :
+      _client = client;
 
   /**
    * Generate an Ad Exchange report based on the saved report ID sent in the query parameters.
@@ -488,10 +503,12 @@ class ReportsSavedResource_ extends Resource {
   }
 }
 
-class UrlchannelsResource_ extends Resource {
+class UrlchannelsResource_ {
 
-  UrlchannelsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  UrlchannelsResource_(Client client) :
+      _client = client;
 
   /**
    * List all URL channels in the specified ad client for this Ad Exchange account.
