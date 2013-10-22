@@ -2,7 +2,7 @@ library adexchangeseller_v1_api.browser;
 
 import "package:google_oauth2_client/google_oauth2_browser.dart" as oauth;
 
-import 'package:google_adexchangeseller_v1_api/src/cloud_api_browser.dart';
+import 'package:google_adexchangeseller_v1_api/src/browser_client.dart';
 import "package:google_adexchangeseller_v1_api/adexchangeseller_v1_api_client.dart";
 
 /** Gives Ad Exchange seller users access to their inventory and the ability to generate reports */
