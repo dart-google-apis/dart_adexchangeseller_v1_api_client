@@ -7,6 +7,7 @@ import 'package:google_adexchangeseller_v1_api/src/console_client.dart';
 import "package:google_adexchangeseller_v1_api/adexchangeseller_v1_api_client.dart";
 
 /** Gives Ad Exchange seller users access to their inventory and the ability to generate reports */
+@deprecated
 class Adexchangeseller extends Client with ConsoleClient {
 
   /** OAuth Scope2: View and manage your Ad Exchange data */
